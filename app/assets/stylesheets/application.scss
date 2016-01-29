@@ -1,0 +1,132 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /*
+ 270 ширина
+ 370 высота
+ */
+
+$screen-xs-max: 543px;
+$screen-sm-min: 544px;
+$screen-sm-max: 767px;
+$screen-md-min: 768px;
+$screen-md-max: 991px;
+$screen-lg-min: 992px;
+$screen-lg-max: 1199px;
+$screen-xl-min: 1200px;
+
+
+
+@media (max-width: $screen-xs-max) {
+	.unit{
+		width: 100%;
+		max-width: 400px;
+	}
+	.unit-2{
+		width: 100%;
+		max-width: 400px;
+	}
+	.unit-3{
+		width: 100%;
+		max-width: 400px;
+	}
+	.unit-4{
+		width: 100%;
+		max-width: 400px;
+	}
+}
+
+@media (min-width: $screen-sm-min){
+	.unit{
+		width: 300px;
+	}
+	.unit-2{
+		width: 600px;
+	}
+	.unit-3{
+		width: 900px;
+	}
+	.unit-4{
+		width: 1200px;
+	}
+}
+
+.container{
+	position: relative;
+	display: block;
+}
+
+.button-red, {
+	position: relative;
+	padding: 15px;
+}
+
+.button-red{
+	background-color: #e6193c;
+}
+
+.block{
+	@extend .unit;
+	display: inline-block;
+	min-height: 370px;
+}
+
+.block-image{
+	position: absolute;
+	width: 100%;
+}
+
+.block-footer{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+
+.block-icon-center{
+	position: absolute;
+	top: 165px;
+	width: 30px
+	height: 30px;
+	border-radius: 30px;
+	background-color: #000000;
+}
+
+.block-icon-top{
+	position: absolute;
+	top: 40px;
+	width: 40px
+	height: 40px;
+	border-radius: 40px;
+	background-color: #000000;
+}
+
+.free-inscription{
+	border-radius: 20px;
+	background-color: #fff200;
+}
+
+.free-inscr-abs{
+	@extend .free-inscription;
+	position: absolute;
+	top: 170px;
+	left: 10px;
+}
+
+.free-inscr{
+	@extend .free-inscription;
+	display: block;
+	position: relative;
+}

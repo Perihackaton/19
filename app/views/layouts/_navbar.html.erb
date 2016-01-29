@@ -9,7 +9,6 @@
         <%=link_to current_user.name, events_path %>
       <li>
         <%=link_to "Выйти", destroy_user_session_path, :method => :delete%>
-
   <% else %>
         <li>
           <%=link_to 'Войти', new_user_session_path %>
