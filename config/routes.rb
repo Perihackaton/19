@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :event_categories
+  root 'pages#index'
+
   devise_for :users
   resources :places
   resources :events

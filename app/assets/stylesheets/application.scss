@@ -19,71 +19,144 @@
  370 высота
  */
 
-$screen-xs-max: 543px;
-$screen-sm-min: 544px;
-$screen-sm-max: 767px;
-$screen-md-min: 768px;
-$screen-md-max: 991px;
-$screen-lg-min: 992px;
-$screen-lg-max: 1199px;
-$screen-xl-min: 1200px;
-
-
-
-@media (max-width: $screen-xs-max) {
-	.unit{
-		width: 100%;
-		max-width: 400px;
-	}
-	.unit-2{
-		width: 100%;
-		max-width: 400px;
-	}
-	.unit-3{
-		width: 100%;
-		max-width: 400px;
-	}
-	.unit-4{
-		width: 100%;
-		max-width: 400px;
-	}
+$screen-xs-max: 599px;
+$screen-sm-min: 600px;
+$screen-sm-max: 899px;
+$screen-md-min: 900px;
+$screen-md-max: 1199px;
+$screen-lg-min: 1200px;
+.content{
+	display: block;
+	position: relative;
+	height: 1px;
+	min-height: 100%;
+	margin: 0px auto;
+}
+body{
+	background-color: #dddddd;
 }
 
-@media (min-width: $screen-sm-min){
-	.unit{
-		width: 300px;
-	}
-	.unit-2{
-		width: 600px;
-	}
-	.unit-3{
-		width: 900px;
-	}
-	.unit-4{
-		width: 1200px;
-	}
+
+.unit-xs{
+	display: block;
+	vertical-align:top;
 }
 
+.unit-sm-1, .unit-sm-2, .unit-md-1, .unit-md-2, .unit-md-3, .unit-lg-1, .unit-lg-2, .unit-lg-3, .unit-lg-4{
+	display: inline-block;
+	vertical-align:top
+}
+
+body{
+}
 .container{
+	display: block;
+	position: relative;
+	margin: 0px auto;
+	padding: 15px;
+}
+.content{
+}
+.wrap{
 	position: relative;
 	display: block;
 }
 
-.button-red, {
+.second-bar{
+	min-height: 100%;
+}
+
+@media (max-width: $screen-xs-max) {
+	.unit-xs{
+		display: block;
+	}
+	.content{
+		max-width: 400px;
+	}
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	.unit-sm-1{
+		width: 300px;
+	}
+	.unit-sm-2{
+		width: 600px;
+	}
+	.content{
+		max-width: 600;
+	}
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+	.unit-md-1{
+		width: 300px;
+	}
+	.unit-md-2{
+		width: 600px;
+	}
+	.unit-md-3{
+		width: 900px;
+	}
+	.content{
+		max-width: 900;
+	}
+}
+
+@media (min-width: $screen-lg-min){
+	.unit-lg-1{
+		width: 300px;
+	}
+	.unit-lg-2{
+		width: 600px;
+	}
+	.unit-lg-3{
+		width: 900px;
+	}
+	.unit-lg-4{
+		width: 1200px;
+	}
+	.content{
+		max-width: $screen-lg-min;
+	}
+}
+
+.unit{
+	@extend .unit-xs;
+	@extend .unit-sm-1;
+	@extend .unit-md-1;
+	@extend .unit-lg-1;
+}
+
+
+.container{
 	position: relative;
-	padding: 15px;
+	display: block;
+	min-height: 100%;
 }
 
 .button-red{
+	position: relative;
+	padding: 15px;
 	background-color: #e6193c;
 }
 
 .block{
 	@extend .unit;
 	display: inline-block;
-	min-height: 370px;
+	min-height: 340px;
+	h3{
+		position: absolute;
+		top: 150px;
+		width: 100%;
+		text-align: center;
+	}
 }
 
+.block-content{
+	display: block;
+	min-height: 340px;
+	background-color: #ffffff;
+}
 .block-image{
 	position: absolute;
 	width: 100%;
@@ -98,7 +171,7 @@ $screen-xl-min: 1200px;
 .block-icon-center{
 	position: absolute;
 	top: 165px;
-	width: 30px
+	width: 30px;
 	height: 30px;
 	border-radius: 30px;
 	background-color: #000000;
@@ -107,7 +180,8 @@ $screen-xl-min: 1200px;
 .block-icon-top{
 	position: absolute;
 	top: 40px;
-	width: 40px
+	left: 115px;
+	width: 40px;
 	height: 40px;
 	border-radius: 40px;
 	background-color: #000000;
@@ -130,3 +204,13 @@ $screen-xl-min: 1200px;
 	display: block;
 	position: relative;
 }
+
+.nav{
+	height: 70px;
+	background-color: #aaaaaa;
+	li{
+		display: inline-block;
+		padding: 20px;
+	}
+}
+

@@ -1,0 +1,16 @@
+=render "layouts/navbar"
+.content
+	.unit-xs.unit-sm-2.unit-md-1.unit-lg-1
+		.container
+				
+	.unit-xs.unit-sm-2.unit-md-2.unit-lg-3
+		-@objects.each do |obj|
+			.block
+				.container
+					.wrap.block-content
+						.block-icon-top
+						h3
+							-if defined? obj.title
+								=obj.title
+							-else defined? obj.name
+								=obj.name
