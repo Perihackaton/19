@@ -141,9 +141,15 @@ body{
 }
 
 .block{
+
 	@extend .unit;
 	display: inline-block;
 	min-height: 340px;
+	&:hover{
+		@extend .block;
+		background-color: inherit;
+		color: inherit;
+	}
 	h3{
 		position: absolute;
 		top: 150px;

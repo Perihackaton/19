@@ -5,12 +5,17 @@
 				
 	.unit-xs.unit-sm-2.unit-md-2.unit-lg-3
 		-@objects.each do |obj|
-			.block
-				.container
-					.wrap.block-content
-						.block-icon-top
-						h3
-							-if defined? obj.title
+			-if(obj.class.name == "Event")
+				a.block href="#{event_path(obj)}"
+					.container
+						.wrap.block-content
+							.block-icon-top
+							h3
 								=obj.title
-							-else defined? obj.name
+			-else
+				a.block href="#{place_path(obj)}"
+					.container
+						.wrap.block-content
+							.block-icon-top
+							h3
 								=obj.name
