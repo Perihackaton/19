@@ -33,10 +33,11 @@ $screen-lg-min: 1200px;
 	margin: 0px auto;
 }
 body{
-	background-color: #dddddd;
+	background-color: #F3F3EB;
 }
-
-
+.def-style{
+	background-color: #ffffff;
+}
 .unit-xs{
 	display: block;
 	vertical-align:top;
@@ -47,14 +48,23 @@ body{
 	vertical-align:top
 }
 
-body{
-}
+
 .container{
 	display: block;
 	position: relative;
 	margin: 0px auto;
 	padding: 15px;
 }
+.second-nav{
+	ul{
+		padding: 0px;
+		margin: 0px;
+	}
+	li{
+		 list-style-type:none;
+	}
+}
+
 .content{
 }
 .wrap{
@@ -213,7 +223,7 @@ body{
 
 .nav{
 	height: 70px;
-	background-color: #aaaaaa;
+	background-color: #ffffff;
 	li{
 		display: inline-block;
 		padding: 20px;

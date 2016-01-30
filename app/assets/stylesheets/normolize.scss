@@ -433,3 +433,17 @@ th {
 ul{
   margin: 0px;
 }
+a{
+  background-color: transparent;
+  font-size: 14px;
+  color: #333333;
+  text-decoration: none;
+  line-height: 1.8em;
+  &:visited, &:link{
+    @extend a;
+  }
+  &:hover,{
+    color: #828282;
+    background-color: transparent;
+  }
+}

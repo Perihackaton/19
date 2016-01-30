@@ -1,8 +1,19 @@
 =render "layouts/navbar"
 .content
-	.unit-xs.unit-sm-2.unit-md-1.unit-lg-1
+	.unit-xs.unit-sm-2.unit-md-1.unit-lg-1.second-nav
 		.container
-				
+			.wrap.def-style
+				.container
+					h4		
+						|События
+					ul
+						-@event_categories.each do |c|
+							li 
+								a href="#" 
+									span
+										=c.name
+									.chbox
+										chexbox
 	.unit-xs.unit-sm-2.unit-md-2.unit-lg-3
 		-@objects.each do |obj|
 			-if(obj.class.name == "Event")
