@@ -1,0 +1,36 @@
+= form_for(@event) do |f|
+  -if @event.errors.any?
+      h2
+        = pluralize(@event.errors.count, "error")
+        | prohibited this event from being saved:
+
+      ul
+        -@event.errors.full_messages.each do |message|
+          li
+            = message
+
+  .field
+    = f.label "Заголовок"
+    br
+    = f.text_field :title
+  .field
+    = f.label "Описание" 
+    br
+    = f.text_area :description
+  .field
+    = f.label "Дата и время прохождения события"
+    br
+    = f.datetime_select :date_and_time
+  .field
+    = f.label "Адрес прохождения мероприятия"
+    br
+    = f.text_field :address
+  .field
+    = f.label "Категории"
+  ul
+    -@categories.each do |c|
+      li
+        =check_box_tag 'event_categories_id[]', c.id
+        =f.label c.name
+  .actions
+    = f.submit "Создать событие"

@@ -1,0 +1,11 @@
+= render "/layouts/navbar"
+.content
+	.container
+		.wrap
+			h1
+				|Новое событие
+
+			= render 'form'
+
+			= link_to 'Назад', events_path
+

@@ -1,0 +1,13 @@
+h1
+	|Изменить событие
+
+.content
+	.container
+		.wrap
+			h1
+				|Новое событие
+
+			= render 'form'
+
+			= link_to 'Назад', events_path
+			= link_to 'Показать', @event 
