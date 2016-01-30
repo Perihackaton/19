@@ -23,15 +23,28 @@
 							-if (obj.is_hor)
 								=image_tag(obj.cover.url(:hor))
 								.block-icon-center
-								h3
-									.container
+								.container
+									h3
 										=obj.title
+								.block-footer
+									.datetime
+										=obj.date_and_time.strftime("%d.%m.%Y")
+									.line
+									.address
+										=obj.address
+									
+								
 							-else
+								|dsd
 								=image_tag(obj.cover.url(:ver))
 								.block-icon-top
 								h3.top
 									=obj.title
-									
+								.block-footer
+									.container.address
+										=obj.address
+									.container
+
 			-else
 				a.block href="#{place_path(obj)}"
 					.container
