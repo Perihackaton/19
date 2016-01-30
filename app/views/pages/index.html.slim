@@ -17,12 +17,21 @@
 	.unit-xs.unit-sm-2.unit-md-2.unit-lg-3
 		-@objects.each do |obj|
 			-if(obj.class.name == "Event")
-				a.block href="#{event_path(obj)}"
+				.block
 					.container
-						.wrap.block-content
-							.block-icon-top
-							h3
-								=obj.title
+						a  href="#{event_path(obj)}"
+							-if (obj.is_hor)
+								=image_tag(obj.cover.url(:hor))
+								.block-icon-center
+								h3
+									.container
+										=obj.title
+							-else
+								=image_tag(obj.cover.url(:ver))
+								.block-icon-top
+								h3.top
+									=obj.title
+									
 			-else
 				a.block href="#{place_path(obj)}"
 					.container

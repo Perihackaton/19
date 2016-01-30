@@ -26,11 +26,19 @@
     br
     = f.text_field :address
   .field
-    = f.label "Категории"
-  ul
-    -@categories.each do |c|
-      li
-        =check_box_tag 'event_categories_id[]', c.id
-        =f.label c.name
+    = f.label "Первая категория:"
+    br
+    = f.collection_select(:first_category, EventCategory.all,:id, :name)
+  .field
+    = f.label "Вторая категория:"
+    br
+    = f.collection_select(:second_category, EventCategory.all,:id, :name)
+  .field
+    = f.label "Изображение"
+    br
+    = f.file_field :cover
+  .field
+    = f.label "Изображение на весь фон"
+    = f.check_box :is_hor, {}, true, false
   .actions
     = f.submit "Создать событие"
