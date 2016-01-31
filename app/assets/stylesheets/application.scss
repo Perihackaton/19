@@ -27,17 +27,49 @@
    *    user zoom.
    */
 
-  html {
-    font-family: 'Open Sans', sans-serif;
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    height: 1px;
-    min-height: 100%;
-  }
-
-  /**
-   * Remove default margin.
-   */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
   body {
     height: 1px;
@@ -434,6 +466,22 @@
     font-weight: bold;
   }
 
+    html {
+    font-family: 'Open Sans', sans-serif;
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    height: 1px;
+    min-height: 100%;
+  }
+
+  /**
+   * Remove default margin.
+   */
+
+   /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
   /* Tables
      ========================================================================== */
 
@@ -453,6 +501,9 @@
 
   ul{
     margin: 0px;
+    &:before{
+        margin: 0px;
+    }
   }
   a{
     font-size: 14px;
@@ -471,7 +522,16 @@
     margin: 0px;
   }
 
-/////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 
 
 $screen-xs-max: 599px;
@@ -529,8 +589,63 @@ body{
     display: block;
 }
 
-.second-bar{
-    min-height: 100%;
+.second-nav{
+    h2{
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-top: 5px; 
+        padding-bottom: 5px;
+    }
+    .nav-bar{
+        background-color: #f4f4f4;
+        a{
+            font-size: 1em;
+            line-height: 2.5em;
+        }
+    }
+    .second-nav-sub{
+        box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+        background-color: #ffffff;
+    }
+    .nav-sort{
+        padding: 15px;
+        li:first-child{
+            a{
+                padding: 5px;
+                padding-left: 18px;
+                padding-right: 15px;
+            }
+            background-color: #393939;
+            border-radius: 30px 0px 0px 30px;
+            color: #ffffff;
+            display:inline-flex;
+        }
+        li:last-child{
+            a{
+                padding: 5px;
+                padding-right: 18px;
+                padding-left: 15px;
+            }
+            background-color: #393939;
+            border-radius: 0px 30px 30px 0px;  
+            display:inline-flex;     
+        }
+        .activ{
+
+            border: 1pxs solid #393939;
+            background-color: #ffffff !important;
+            a{
+                color: #393939;
+            }
+        }
+        li{
+            a{
+                color: #ffffff;
+            }
+            display: inline-block;
+            border: 1px solid #393939;
+        }
+    }
 }
 
 img{
@@ -645,13 +760,20 @@ img{
     }
     h3{
         margin: 0px;
-        margin-top: 5px;
+        margin-top: 10px;
         display: block;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        font-weight: 600;
     }
-    .top{
+    .reverse-title{
         position: absolute;
         top: 150px;
         text-align: center;
+        width: 240px;
+        padding: 0px 15px;
+        color: #ffffff;
+        z-index: 3;
     }
     img{
         display: block;
@@ -659,7 +781,7 @@ img{
     a{
         position: relative;
         display: block;
-        min-height: 340px;
+        min-height: 370px;
         background-color: #ffffff;
     }
     .address{
@@ -689,9 +811,21 @@ img{
             display: block;
         }
     }
+
+    .blackout{
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        background-color: rgba(20, 20, 20, 0.5);
+        width: 270px;
+        height: 370px;
+        z-index: 2;
+    }
+    .reverse-footer{
+        color: #ffffff;
+        z-index: 3;
+    }
 }
-
-
 
 
 .block-icon-center{
@@ -735,6 +869,7 @@ img{
 .nav{
     height: 70px;
     background-color: #ffffff;
+    border-bottom: 1px solid #ebebeb;
     li{
         display: inline-block;
         padding: 20px;
@@ -745,3 +880,29 @@ img{
     margin: 15px 0px;
 }
 
+.logo{
+    display: inline-block;
+    padding-top: 22px;
+    min-width: 270px; 
+    padding-left: 30px; 
+}
+
+.menu{
+    margin: 0px;
+    display: inline-block;
+}
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.white-back{
+    background-color: #ffffff;
+}
+
+h1{
+    padding-left: 15px;
+}

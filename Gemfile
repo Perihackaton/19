@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'slim'
 gem "paperclip", "~> 4.3"
+gem 'russian', '~> 0.6.0'
 
 # gem 'capistrano-rails', group: :development
 

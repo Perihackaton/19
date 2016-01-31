@@ -1,0 +1,19 @@
+=render "layouts/navbar"
+.wrap.white-back
+	.content
+		.unit-xs.unit-sm-2.unit-md-2.unit-lg-3.second-nav
+			.container
+				h1
+					=@event.title
+				div.event-time
+					|Мероприятие состоится
+					br
+					=Russian::strftime(@event.date_and_time, "%d %B %I:%M")  
+				p
+					=@event.description
+				-if(user_signed_in?)
+					= link_to 'Edit', edit_event_path(@event)
+					br 
+					= link_to 'Back', events_path
+
+

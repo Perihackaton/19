@@ -1,4 +1,5 @@
 class EventCategoriesController < ApplicationController
+  
   before_action :set_event_category, only: [:show, :edit, :update, :destroy]
 
   # GET /event_categories

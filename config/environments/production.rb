@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.i18n.default_locale = :ru
   # Settings specified here will take precedence over those in config/application.rb.
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w( .svg .eot .woff .ttf)

@@ -2,18 +2,24 @@
 .content
 	.unit-xs.unit-sm-2.unit-md-1.unit-lg-1.second-nav
 		.container
-			.wrap.def-style
+			.wrap.second-nav-sub
 				.container
-					h4		
+					h2.nav-title		
 						|События
-					ul
+				ul.nav-bar
+					.container
 						-@event_categories.each do |c|
 							li 
 								a href="#" 
 									span
 										=c.name
-									.chbox
-										chexbox
+				ul.nav-sort
+					li.activ
+						a href="#"
+							|Ближайщие
+					li
+						a href="#"
+							|Популярные
 	.unit-xs.unit-sm-2.unit-md-2.unit-lg-3
 		-@objects.each do |obj|
 			-if(obj.class.name == "Event")
@@ -35,15 +41,17 @@
 									
 								
 							-else
-								|dsd
 								=image_tag(obj.cover.url(:ver))
+								.blackout
 								.block-icon-top
-								h3.top
+								h3.reverse-title
 									=obj.title
-								.block-footer
-									.container.address
+								.block-footer.reverse-footer
+									.datetime
+										=obj.date_and_time.strftime("%d.%m.%Y")
+									.line
+									.address
 										=obj.address
-									.container
 
 			-else
 				a.block href="#{place_path(obj)}"
