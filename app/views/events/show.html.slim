@@ -5,15 +5,21 @@
 			.container
 				h1
 					=@event.title
-				div.event-time
-					|Мероприятие состоится
-					br
-					=Russian::strftime(@event.date_and_time, "%d %B %I:%M")  
-				p
+				.event-inscr
+					.wrap
+						.event-time
+							|Мероприятие состоится:
+							br
+							b.inscr
+								=Russian::strftime(@event.date_and_time, "%d %B %I:%M")
+							.inscr
+								=Russian::strftime(@event.date_and_time, "%A")	  
+					.wrap.margin
+						a.registr-event
+							|Зарегистрироваться
+				p.text
 					=@event.description
 				-if(user_signed_in?)
 					= link_to 'Edit', edit_event_path(@event)
 					br 
 					= link_to 'Back', events_path
-
-

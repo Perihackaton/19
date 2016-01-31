@@ -588,6 +588,10 @@ body{
     position: relative;
     display: block;
 }
+.wrap-inline{
+    position: relative;
+    display: inline-block;
+}
 
 .second-nav{
     h2{
@@ -804,7 +808,7 @@ img{
             background-color: #F3F3EB
         }
         .datetime{
-            font-size: 0.95em;
+            font-size: 1em;
             display: block;
         }
         .address{
@@ -830,15 +834,23 @@ img{
 
 .block-icon-center{
     position: absolute;
-    top: 165px;
-    left: 120px;
-    width: 30px;
-    height: 30px;
+    top: 155px;
+    left: 110px;
+    width: 40px;
+    height: 40px;
     border-radius: 30px;
     background-color: #000000;
+    &>div{
+        color: #ffffff;
+        font-size: 1.2em;
+        position: absolute;
+        top: 5px;
+        left: 7px;
+    }
 }
 
 .block-icon-top{
+    color: #ffffff;
     position: absolute;
     top: 40px;
     left: 115px;
@@ -846,24 +858,33 @@ img{
     height: 40px;
     border-radius: 40px;
     background-color: #000000;
+    &>div{
+        font-size: 1.2em;
+        position: absolute;
+        top: 5px;
+        left: 7px;
+    }
+    z-index: 3; 
 }
 
 .free-inscription{
+    font-size: 0.8em;
     border-radius: 20px;
     background-color: #fff200;
+    line-height: 2em;
+    padding: 0px 10px;
 }
 
 .free-inscr-abs{
     @extend .free-inscription;
     position: absolute;
     top: 170px;
-    left: 10px;
+    left: 15px; 
 }
 
 .free-inscr{
     @extend .free-inscription;
     display: block;
-    position: relative;
 }
 
 .nav{
@@ -905,4 +926,41 @@ img{
 
 h1{
     padding-left: 15px;
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 1.2em;
+}
+.event-inscr{
+    position: relative;
+    display: block;
+    .event-time{
+        margin-left: -15px;
+        display: inline-block;
+        background: #fff568;
+        padding: 15px;
+        padding-left: 30px;
+        line-height: 2;
+    }
+
+    .inscr{
+        line-height: 1.2em;
+        font-size: 1.2em;
+    }
+
+    .registr-event{
+        color: #ffffff;
+        background-color: #e6183c;
+        padding: 10px 15px;
+    }
+    .margin{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+}
+
+.text{
+    font-size: 1em;
+    line-height: 1.8em;
 }

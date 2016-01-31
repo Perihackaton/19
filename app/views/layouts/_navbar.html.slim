@@ -4,6 +4,8 @@
       =image_tag("logo.png")
     ul.menu.left
       li
+        =link_to "Главная", events_path
+      li
         =link_to "События", events_path
     ul.menu.right 
       -if user_signed_in?

@@ -29,14 +29,17 @@
 							-if (obj.is_hor)
 								=image_tag(obj.cover.url(:hor))
 								.block-icon-center
+									.bi_building-house
 								.container
 									h3
 										=obj.title
+								.free-inscr-abs
+									|БЕСПЛАТНО
 								.block-footer
-									.datetime
-										=obj.date_and_time.strftime("%d.%m.%Y")
+									.datetime.bi_time-watches-a
+										=obj.date_and_time.strftime("%d.%m.%Y  %I:%M")
 									.line
-									.address
+									.address.bi_location-pin-regular
 										=obj.address
 									
 								
@@ -44,13 +47,16 @@
 								=image_tag(obj.cover.url(:ver))
 								.blackout
 								.block-icon-top
+									.bi_building-museum
 								h3.reverse-title
 									=obj.title
+								//.free-inscr
+								//	|БЕСПЛАТНО
 								.block-footer.reverse-footer
-									.datetime
+									.datetime.bi_time-watches-a
 										=obj.date_and_time.strftime("%d.%m.%Y")
 									.line
-									.address
+									.address.bi_location-pin-regular
 										=obj.address
 
 			-else
